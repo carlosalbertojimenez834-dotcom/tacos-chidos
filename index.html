@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tacos Chidos - Tacos a domicilio en Guelph, Ontario. ¡Pide los mejores tacos para entrega! Delivery de auténtica comida mexicana en Guelph.">
+    <meta name="keywords" content="tacos, tacos a domicilio, delivery, Guelph, Ontario, comida mexicana, Tacos Chidos, order online, pedir tacos">
+    <title>Tacos Chidos - Tacos a Domicilio en Guelph, Ontario</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f3e9; /* Un color crema suave */
+        }
+        .text-shadow-outline {
+            text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+        }
+        .order-button-gradient {
+            background-image: linear-gradient(to right, #ef4444, #f59e0b);
+            transition: all 0.3s ease;
+        }
+        .order-button-gradient:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .wavy-divider {
+            height: 100px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.14,103.59,32.48,200.5,35.08,51.86,2.27,117.84,5.43,184.22,4.89,97.74-.82,192.1-15.35,310.6-26.85,41.97-4.22,94.94-8.82,159.27-14.77,36.5-3.56,71.74-5.33,110.42-5.65,22.25-.19,39.63-.4,53.49-.62,29.98-.44,52.12-.24,71.21.36,65.62,2.02,118.89,3.58,131.7,3.58V0Z" style="fill:%23f59e0b;" ></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navegación y Encabezado -->
+    <header class="bg-white shadow-lg fixed top-0 w-full z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-red-600">🌮 Tacos Chidos</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#menu" class="text-gray-600 hover:text-red-600 font-semibold transition-colors">Menú</a>
+                <a href="#order" class="text-gray-600 hover:text-red-600 font-semibold transition-colors">Pedidos</a>
+                <a href="#delivery" class="text-gray-600 hover:text-red-600 font-semibold transition-colors">Entrega</a>
+                <a href="#contact" class="text-gray-600 hover:text-red-600 font-semibold transition-colors">Contacto</a>
+                <a href="#order" class="order-button-gradient text-white px-6 py-2 rounded-full font-bold shadow-lg transform transition-transform hover:scale-105">Hacer Pedido</a>
+            </div>
+            <!-- Botón del menú móvil -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+        <!-- Menú móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#menu" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 transition-colors">Menú</a>
+            <a href="#order" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 transition-colors">Pedidos</a>
+            <a href="#delivery" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 transition-colors">Entrega</a>
+            <a href="#contact" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 transition-colors">Contacto</a>
+            <a href="#order" class="block text-center order-button-gradient text-white px-6 py-3 font-bold">Hacer Pedido</a>
+        </div>
+    </header>
+
+    <main class="mt-20">
+        <!-- Sección de bienvenida -->
+        <section class="relative bg-cover bg-center" style="background-image: url('https://i.imgur.com/iVTE2Sh.png');">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="container mx-auto px-6 py-32 text-center relative z-10">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white text-shadow-outline">¡Los Tacos Más Chidos de Guelph!</h1>
+                <p class="mt-4 text-xl md:text-2xl text-white font-bold">🌮 Auténtica comida mexicana a domicilio. ¡Pide en línea y disfruta! 🌶️</p>
+                <a href="#order" class="mt-8 inline-block order-button-gradient text-white px-10 py-4 rounded-full font-bold text-lg shadow-2xl transform transition-transform hover:scale-110">¡Hacer Pedido Ahora!</a>
+            </div>
+        </section>
+
+        <div class="wavy-divider bg-green-600 transform scale-x-[-1] scale-y-[-1]"></div>
+
+        <!-- Sección del Menú -->
+        <section id="menu" class="bg-yellow-100 py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-center text-green-700 mb-12">Nuestro Menú de Antojo</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Tacos al Pastor -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 border-4 border-red-600">
+                        <img src="https://i.imgur.com/CNLgKCi.jpeg" alt="Tacos al Pastor" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-red-600">Tacos al Pastor 🍍</h3>
+                            <p class="text-gray-700 mt-2">Sabrosa carne de cerdo marinada con piña y especias, servida en tortilla de maíz.</p>
+                            <p class="text-green-700 font-bold text-xl mt-4">$3.50 CAD / taco</p>
+                        </div>
+                    </div>
+                    <!-- Tacos de Carne Asada -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 border-4 border-red-600">
+                        <img src="https://i.imgur.com/d3Pi3vE.jpeg" alt="Tacos de Carne Asada" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-red-600">Tacos de Carne Asada 🥩</h3>
+                            <p class="text-gray-700 mt-2">Tierna carne asada a la parrilla, picada y servida con cilantro y cebolla.</p>
+                            <p class="text-green-700 font-bold text-xl mt-4">$4.00 CAD / taco</p>
+                        </div>
+                    </div>
+                    <!-- Tacos de Carnitas -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 border-4 border-red-600">
+                        <img src="https://i.imgur.com/a5HXx6B.jpeg" alt="Tacos de Carnitas" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-red-600">Tacos de Carnitas 🐖</h3>
+                            <p class="text-gray-700 mt-2">Carne de cerdo confitada a fuego lento, con un sabor increíble. ¡Pruébalos!</p>
+                            <p class="text-green-700 font-bold text-xl mt-4">$4.00 CAD / taco</p>
+                        </div>
+                    </div>
+                    <!-- Tacos de Tinga de Pollo -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 border-4 border-red-600">
+                        <img src="https://i.imgur.com/PtxNAqj.jpeg" alt="Tacos de Tinga de Pollo" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-red-600">Tacos de Tinga de Pollo 🐔</h3>
+                            <p class="text-gray-700 mt-2">Jugoso pollo deshebrado en una salsa de tomate y chipotle. ¡Deliciosos!</p>
+                            <p class="text-green-700 font-bold text-xl mt-4">$3.50 CAD / taco</p>
+                        </div>
+                    </div>
+                     <!-- Tacos de Pescado -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 border-4 border-red-600">
+                        <img src="https://i.imgur.com/Q2Io7JF.jpeg" alt="Tacos de Pescado" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-red-600">Tacos de Pescado 🐟</h3>
+                            <p class="text-gray-700 mt-2">Crujiente filete de pescado empanizado con col, crema y pico de gallo.</p>
+                            <p class="text-green-700 font-bold text-xl mt-4">$4.50 CAD / taco</p>
+                        </div>
+                    </div>
+                    <!-- Quesabirrias -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 border-4 border-red-600">
+                        <img src="https://i.imgur.com/e8JQEo9.jpeg" alt="Quesabirrias" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-red-600">Quesabirrias 🌮🧀</h3>
+                            <p class="text-gray-700 mt-2">Tortilla de maíz con birria de res y queso fundido, servida con caldo para mojar.</p>
+                            <p class="text-green-700 font-bold text-xl mt-4">$5.00 CAD / taco</p>
+                        </div>
+                    </div>
+                    <!-- Quesadillas de Chorizo -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 border-4 border-red-600">
+                        <img src="https://i.imgur.com/lNbRFLu.jpeg" alt="Quesadillas de Chorizo" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-red-600">Quesadillas de Chorizo 🧀🌶️</h3>
+                            <p class="text-gray-700 mt-2">Tortilla de harina con queso fundido y chorizo sazonado.</p>
+                            <p class="text-green-700 font-bold text-xl mt-4">$8.00 CAD</p>
+                        </div>
+                    </div>
+                    <!-- Burritos -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 border-4 border-red-600">
+                        <img src="https://i.imgur.com/V2svKTe.jpeg" alt="Burrito" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-red-600">Burrito 🌯</h3>
+                            <p class="text-gray-700 mt-2">Tortilla de harina rellena de arroz, frijoles, carne asada, queso y crema.</p>
+                            <p class="text-green-700 font-bold text-xl mt-4">$12.00 CAD</p>
+                        </div>
+                    </div>
+                    <!-- Elote en Vaso -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 border-4 border-red-600">
+                        <img src="https://i.imgur.com/qe9JptS.jpeg" alt="Elote en Vaso" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-red-600">Elote en Vaso 🌽</h3>
+                            <p class="text-gray-700 mt-2">Granos de maíz dulce con mayonesa, queso cotija y chile en polvo. ¡Un clásico!</p>
+                            <p class="text-green-700 font-bold text-xl mt-4">$6.00 CAD</p>
+                        </div>
+                    </div>
+                     <!-- Churros -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 border-4 border-red-600">
+                        <img src="https://i.imgur.com/VnParP0.jpeg" alt="Churros" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-red-600">Churros 🍩</h3>
+                            <p class="text-gray-700 mt-2">Postre clásico, crujientes por fuera y suaves por dentro, espolvoreados con azúcar y canela.</p>
+                            <p class="text-green-700 font-bold text-xl mt-4">$5.00 CAD</p>
+                        </div>
+                    </div>
+                    <!-- Aguas Frescas -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden transform transition-transform hover:scale-105 border-4 border-red-600">
+                        <img src="https://i.imgur.com/BDRgV6q.jpeg" alt="Aguas Frescas" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-extrabold text-red-600">Aguas Frescas 🍹</h3>
+                            <p class="text-gray-700 mt-2">Refrescante agua de Jamaica o de Horchata. ¡Pregunta por la del día!</p>
+                            <p class="text-green-700 font-bold text-xl mt-4">$4.00 CAD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="wavy-divider bg-red-600"></div>
+
+        <!-- Sección de Pedido en línea -->
+        <section id="order" class="bg-green-600 py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-extrabold text-center text-white text-shadow-outline mb-12">¡Haz tu Pedido! 🛒</h2>
+                <div class="bg-white rounded-xl shadow-2xl p-8 md:p-12 border-8 border-yellow-500">
+                    <form id="order-form" class="space-y-6">
+                        <!-- Selector de Tacos -->
+                        <div>
+                            <label class="block text-2xl font-extrabold text-red-600 mb-4">Elige tus Delicias:</label>
+                            <div id="taco-options" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                <div class="p-4 border-2 border-green-300 rounded-lg cursor-pointer hover:border-red-600 transition-colors">
+                                    <h4 class="font-bold text-lg">Tacos al Pastor 🍍</h4>
+                                    <p class="text-sm text-gray-500">$3.50 / taco</p>
+                                    <div class="flex items-center mt-2">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">-</button>
+                                        <input type="number" data-price="3.50" data-name="Tacos al Pastor" value="0" min="0" class="taco-quantity w-16 text-center mx-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">+</button>
+                                    </div>
+                                </div>
+                                <div class="p-4 border-2 border-green-300 rounded-lg cursor-pointer hover:border-red-600 transition-colors">
+                                    <h4 class="font-bold text-lg">Tacos de Carne Asada 🥩</h4>
+                                    <p class="text-sm text-gray-500">$4.00 / taco</p>
+                                    <div class="flex items-center mt-2">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">-</button>
+                                        <input type="number" data-price="4.00" data-name="Tacos de Carne Asada" value="0" min="0" class="taco-quantity w-16 text-center mx-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">+</button>
+                                    </div>
+                                </div>
+                                <div class="p-4 border-2 border-green-300 rounded-lg cursor-pointer hover:border-red-600 transition-colors">
+                                    <h4 class="font-bold text-lg">Tacos de Carnitas 🐖</h4>
+                                    <p class="text-sm text-gray-500">$4.00 / taco</p>
+                                    <div class="flex items-center mt-2">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">-</button>
+                                        <input type="number" data-price="4.00" data-name="Tacos de Carnitas" value="0" min="0" class="taco-quantity w-16 text-center mx-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">+</button>
+                                    </div>
+                                </div>
+                                <div class="p-4 border-2 border-green-300 rounded-lg cursor-pointer hover:border-red-600 transition-colors">
+                                    <h4 class="font-bold text-lg">Tacos de Tinga de Pollo 🐔</h4>
+                                    <p class="text-sm text-gray-500">$3.50 / taco</p>
+                                    <div class="flex items-center mt-2">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">-</button>
+                                        <input type="number" data-price="3.50" data-name="Tacos de Tinga de Pollo" value="0" min="0" class="taco-quantity w-16 text-center mx-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">+</button>
+                                    </div>
+                                </div>
+                                <div class="p-4 border-2 border-green-300 rounded-lg cursor-pointer hover:border-red-600 transition-colors">
+                                    <h4 class="font-bold text-lg">Tacos de Pescado 🐟</h4>
+                                    <p class="text-sm text-gray-500">$4.50 / taco</p>
+                                    <div class="flex items-center mt-2">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">-</button>
+                                        <input type="number" data-price="4.50" data-name="Tacos de Pescado" value="0" min="0" class="taco-quantity w-16 text-center mx-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">+</button>
+                                    </div>
+                                </div>
+                                <div class="p-4 border-2 border-green-300 rounded-lg cursor-pointer hover:border-red-600 transition-colors">
+                                    <h4 class="font-bold text-lg">Quesabirrias 🌮🧀</h4>
+                                    <p class="text-sm text-gray-500">$5.00 / taco</p>
+                                    <div class="flex items-center mt-2">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">-</button>
+                                        <input type="number" data-price="5.00" data-name="Quesabirrias" value="0" min="0" class="taco-quantity w-16 text-center mx-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">+</button>
+                                    </div>
+                                </div>
+                                <div class="p-4 border-2 border-green-300 rounded-lg cursor-pointer hover:border-red-600 transition-colors">
+                                    <h4 class="font-bold text-lg">Quesadillas 🧀</h4>
+                                    <p class="text-sm text-gray-500">$8.00 / unidad</p>
+                                    <div class="flex items-center mt-2">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">-</button>
+                                        <input type="number" data-price="8.00" data-name="Quesadillas" value="0" min="0" class="taco-quantity w-16 text-center mx-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">+</button>
+                                    </div>
+                                </div>
+                                <div class="p-4 border-2 border-green-300 rounded-lg cursor-pointer hover:border-red-600 transition-colors">
+                                    <h4 class="font-bold text-lg">Burritos 🌯</h4>
+                                    <p class="text-sm text-gray-500">$12.00 / unidad</p>
+                                    <div class="flex items-center mt-2">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">-</button>
+                                        <input type="number" data-price="12.00" data-name="Burritos" value="0" min="0" class="taco-quantity w-16 text-center mx-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">+</button>
+                                    </div>
+                                </div>
+                                <div class="p-4 border-2 border-green-300 rounded-lg cursor-pointer hover:border-red-600 transition-colors">
+                                    <h4 class="font-bold text-lg">Elote en Vaso 🌽</h4>
+                                    <p class="text-sm text-gray-500">$6.00 / unidad</p>
+                                    <div class="flex items-center mt-2">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">-</button>
+                                        <input type="number" data-price="6.00" data-name="Elote en Vaso" value="0" min="0" class="taco-quantity w-16 text-center mx-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">+</button>
+                                    </div>
+                                </div>
+                                <div class="p-4 border-2 border-green-300 rounded-lg cursor-pointer hover:border-red-600 transition-colors">
+                                    <h4 class="font-bold text-lg">Churros 🍩</h4>
+                                    <p class="text-sm text-gray-500">$5.00 / unidad</p>
+                                    <div class="flex items-center mt-2">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">-</button>
+                                        <input type="number" data-price="5.00" data-name="Churros" value="0" min="0" class="taco-quantity w-16 text-center mx-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">+</button>
+                                    </div>
+                                </div>
+                                <div class="p-4 border-2 border-green-300 rounded-lg cursor-pointer hover:border-red-600 transition-colors">
+                                    <h4 class="font-bold text-lg">Aguas Frescas 🍹</h4>
+                                    <p class="text-sm text-gray-500">$4.00 / unidad</p>
+                                    <div class="flex items-center mt-2">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">-</button>
+                                        <input type="number" data-price="4.00" data-name="Aguas Frescas" value="0" min="0" class="taco-quantity w-16 text-center mx-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600">
+                                        <button type="button" class="quantity-btn bg-red-600 text-white w-8 h-8 rounded-full">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Extras -->
+                        <div>
+                            <label class="block text-2xl font-extrabold text-red-600 mt-8 mb-4">Extras:</label>
+                            <div class="flex flex-wrap gap-4">
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="extra" value="Salsa Picante" class="form-checkbox text-red-600 h-5 w-5 rounded-md">
+                                    <span class="text-gray-700">Salsa Picante 🌶️</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="extra" value="Guacamole" class="form-checkbox text-red-600 h-5 w-5 rounded-md">
+                                    <span class="text-gray-700">Guacamole 🥑</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="extra" value="Limones" class="form-checkbox text-red-600 h-5 w-5 rounded-md">
+                                    <span class="text-gray-700">Limones 🍋</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="extra" value="Caldo para Quesabirrias" class="form-checkbox text-red-600 h-5 w-5 rounded-md">
+                                    <span class="text-gray-700">Caldo para Quesabirrias 🥣</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Información del cliente y entrega -->
+                        <div class="mt-8 grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block font-bold text-gray-700">Tu Nombre</label>
+                                <input type="text" id="name" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block font-bold text-gray-700">Tu Correo Electrónico</label>
+                                <input type="email" id="email" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="address" class="block font-bold text-gray-700">Dirección de Entrega</label>
+                                <textarea id="address" rows="3" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600" required></textarea>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="notes" class="block font-bold text-gray-700">Notas Adicionales (Opcional)</label>
+                                <textarea id="notes" rows="2" class="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Resumen del Pedido (Dinámico) -->
+                        <div id="order-summary" class="mt-8 p-6 bg-yellow-100 rounded-lg hidden border-4 border-yellow-500">
+                            <h3 class="text-2xl font-extrabold text-red-600 mb-4">Resumen de tu Pedido</h3>
+                            <ul id="summary-list" class="space-y-2"></ul>
+                            <div class="mt-4 pt-4 border-t-2 border-red-200 flex justify-between items-center">
+                                <span class="text-lg font-bold">Total:</span>
+                                <span id="total-price" class="text-2xl font-bold text-green-700">$0.00 CAD</span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center mt-10">
+                            <button type="submit" class="order-button-gradient text-white px-12 py-4 rounded-full font-bold text-xl shadow-2xl transform transition-transform hover:scale-105">
+                                ¡Pagar y Disfrutar! 🎉
+                            </button>
+                        </div>
+                    </form>
+                    <!-- Mensaje de éxito -->
+                    <div id="success-message" class="hidden mt-8 text-center p-4 bg-green-100 text-green-700 rounded-lg border-4 border-green-500">
+                        <p class="font-bold">¡Pedido enviado! Por favor, revisa tu correo para ver el resumen del pedido que hemos generado para ti. Puedes copiarlo y pegarlo en un correo a <span class="font-mono text-green-900">pedidos@tacoschidos.ca</span>.</p>
+                        <textarea id="email-body-text" class="w-full h-32 mt-4 p-2 bg-white border border-green-300 rounded-md" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="wavy-divider bg-yellow-500 transform scale-x-[-1] scale-y-[-1]"></div>
+
+        <!-- Sección de Entrega -->
+        <section id="delivery" class="bg-red-600 py-20">
+            <div class="container mx-auto px-6 text-center text-white">
+                <h2 class="text-4xl font-extrabold mb-6 text-shadow-outline">🚗 Información de Entrega</h2>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto">
+                    Actualmente, hacemos entregas a domicilio en la zona de Guelph, Ontario. Ofrecemos un servicio rápido y eficiente para que tus tacos lleguen calientitos y deliciosos.
+                </p>
+                <div class="bg-white text-gray-800 rounded-xl shadow-xl p-8 mt-10 max-w-2xl mx-auto border-4 border-green-500">
+                    <h3 class="text-2xl font-bold text-yellow-600">Zonas y Costos</h3>
+                    <ul class="list-disc list-inside space-y-2 text-left mt-4">
+                        <li>**Guelph Central:** Costo de envío $5.00 CAD.</li>
+                        <li>**Sur de Guelph:** Costo de envío $7.00 CAD.</li>
+                        <li>**Norte de Guelph:** Costo de envío $7.00 CAD.</li>
+                    </ul>
+                    <p class="mt-4 text-gray-600">
+                        El costo final se confirmará al momento de procesar tu pedido.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="wavy-divider bg-green-600"></div>
+
+        <!-- Sección de Contacto -->
+        <section id="contact" class="bg-gray-100 py-20">
+            <div class="container mx-auto px-6 text-center text-gray-800">
+                <h2 class="text-4xl font-extrabold text-red-600 mb-6">📞 Contáctanos</h2>
+                <p class="text-lg max-w-xl mx-auto mb-8">
+                    ¿Tienes preguntas sobre tu pedido o nuestro menú? ¡Estamos aquí para ayudarte!
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                    <div class="bg-white rounded-xl shadow-xl p-6 w-full md:w-1/2 lg:w-1/3 border-4 border-red-600">
+                        <h3 class="text-2xl font-bold text-yellow-600">Teléfono</h3>
+                        <p class="text-xl mt-2 font-mono">519-555-1234</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-xl p-6 w-full md:w-1/2 lg:w-1/3 border-4 border-red-600">
+                        <h3 class="text-2xl font-bold text-yellow-600">Correo Electrónico</h3>
+                        <p class="text-xl mt-2 font-mono break-all">pedidos@tacoschidos.ca</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Tacos Chidos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const orderForm = document.getElementById('order-form');
+            const tacoQuantities = document.querySelectorAll('.taco-quantity');
+            const quantityButtons = document.querySelectorAll('.quantity-btn');
+            const orderSummary = document.getElementById('order-summary');
+            const summaryList = document.getElementById('summary-list');
+            const totalPriceElement = document.getElementById('total-price');
+            const successMessage = document.getElementById('success-message');
+            const emailBodyTextarea = document.getElementById('email-body-text');
+
+            // Lógica para el menú móvil
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Función para actualizar el resumen del pedido
+            const updateOrderSummary = () => {
+                let total = 0;
+                let summaryHtml = '';
+                const items = [];
+
+                tacoQuantities.forEach(input => {
+                    const quantity = parseInt(input.value);
+                    if (quantity > 0) {
+                        const price = parseFloat(input.dataset.price);
+                        const name = input.dataset.name;
+                        const itemTotal = quantity * price;
+                        total += itemTotal;
+                        items.push({ name, quantity, itemTotal });
+                        summaryHtml += `<li class="flex justify-between"><span>${quantity}x ${name}</span><span>$${itemTotal.toFixed(2)} CAD</span></li>`;
+                    }
+                });
+
+                const extras = Array.from(document.querySelectorAll('input[name="extra"]:checked'))
+                                    .map(checkbox => checkbox.value);
+                if (extras.length > 0) {
+                    summaryHtml += `<li class="font-bold mt-2">Extras:</li>`;
+                    extras.forEach(extra => {
+                        items.push({ name: extra });
+                        summaryHtml += `<li>- ${extra}</li>`;
+                    });
+                }
+
+                if (items.length > 0) {
+                    orderSummary.classList.remove('hidden');
+                    summaryList.innerHTML = summaryHtml;
+                    totalPriceElement.textContent = `$${total.toFixed(2)} CAD`;
+                } else {
+                    orderSummary.classList.add('hidden');
+                }
+            };
+
+            // Eventos para los botones de cantidad
+            quantityButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const input = button.parentElement.querySelector('.taco-quantity');
+                    let quantity = parseInt(input.value);
+                    if (button.textContent === '+') {
+                        quantity++;
+                    } else if (button.textContent === '-' && quantity > 0) {
+                        quantity--;
+                    }
+                    input.value = quantity;
+                    updateOrderSummary();
+                });
+            });
+
+            // Evento de cambio en los campos de cantidad
+            tacoQuantities.forEach(input => {
+                input.addEventListener('change', updateOrderSummary);
+            });
+
+            // Evento de envío del formulario
+            orderForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const address = document.getElementById('address').value;
+                const notes = document.getElementById('notes').value;
+                let orderDetails = '';
+
+                // Obtener detalles del pedido
+                tacoQuantities.forEach(input => {
+                    const quantity = parseInt(input.value);
+                    if (quantity > 0) {
+                        orderDetails += `${quantity}x ${input.dataset.name}\n`;
+                    }
+                });
+
+                const extras = Array.from(document.querySelectorAll('input[name="extra"]:checked'))
+                                    .map(checkbox => checkbox.value);
+                if (extras.length > 0) {
+                    orderDetails += '\nExtras:\n' + extras.join('\n');
+                }
+
+                const total = totalPriceElement.textContent;
+
+                const emailBody = `¡Hola, Tacos Chidos!\n\nMe gustaría hacer el siguiente pedido:\n\n${orderDetails}\n\n${total}\n\n--- Detalles del cliente ---\nNombre: ${name}\nCorreo: ${email}\nDirección: ${address}\nNotas: ${notes || 'No hay notas adicionales'}\n\n¡Gracias!`;
+
+                // Mostrar el mensaje de éxito y el cuerpo del correo
+                successMessage.classList.remove('hidden');
+                emailBodyTextarea.value = emailBody;
+
+                // Intenta copiar al portapapeles y luego redirige
+                const tempInput = document.createElement('textarea');
+                tempInput.value = emailBody;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    console.error('Failed to copy text', err);
+                }
+                document.body.removeChild(tempInput);
+
+                // Redirigir para abrir el cliente de correo
+                const mailtoLink = `mailto:pedidos@tacoschidos.ca?subject=Pedido de Tacos desde el sitio web&body=${encodeURIComponent(emailBody)}`;
+                window.location.href = mailtoLink;
+            });
+        });
+    </script>
+</body>
+</html>
